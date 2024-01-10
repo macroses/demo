@@ -1,0 +1,23 @@
+.account__layout {
+	display: grid;
+	grid-template-columns: 500px;
+	justify-content: center;
+	margin-top: 24px;
+	gap: 12px;
+}
+
+.account__user-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+	margin-top: 24px;
+
+	& .input-parent {
+		margin-top: 12px;
+	}
+}
+
+.account__user-form-submit {
+	max-width: 350px;
+}

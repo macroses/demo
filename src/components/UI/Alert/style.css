@@ -1,0 +1,14 @@
+.alert {
+	padding: 20px 35px;
+	background-color: rgb(var(--accent-color) / 0.1);
+	border-left: 5px solid rgb(var(--accent-color));
+	color: rgb(var(--accent-color));
+	border-radius: 0 12px 12px 0;
+
+	&.alert--sm {
+		padding: 4px 8px;
+		font-size: 12px;
+		border-left: 2px solid rgb(var(--accent-color));
+	}
+}
+

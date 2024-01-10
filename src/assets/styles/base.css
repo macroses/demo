@@ -1,0 +1,176 @@
+:root {
+  color-scheme: light;
+  --accent-color: 26 92 255;
+  /*--accent-color: #1a5cff;*/
+  --text-color: 44 62 80;
+
+  --main-bg: #fff;
+  --header-bg: #fff;
+  --block-bg: rgba(244,247,248,1);
+  --form-bg: rgba(244,247,248,1);
+
+  --btn-color: #fff;
+  --btn-color-transparent: rgb(var(--accent-color));
+
+  --base-transition: 0.25s ease;
+}
+
+:root.dark-theme {
+  color-scheme: dark;
+  --main-bg: rgb(37 37 46);
+  --text-color: 224 224 224;
+  --form-bg: rgb(65 65 76);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root.prefer {
+    --main-bg: rgb(37 37 46);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+@media screen and (min-width: 769px) {
+  html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+}
+
+body {
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: rgb(var(--text-color));
+  background-color: var(--main-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+.container {
+  max-width: 1198px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.main__layout {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  gap: 24px;
+  position: relative;
+}
+
+.group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+
+
+  &.home {
+    max-width: 500px;
+    margin: 0 auto;
+
+    & .button {
+      flex: 1;
+    }
+
+    @media (max-width: 475px) {
+      gap: 8px;
+    }
+  }
+}
+
+.group.efforts {
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  gap: 0;
+}
+
+.copy-message {
+  margin-top: 24px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  /*.main__layout.workout-mode {*/
+  /*  grid-template-columns: 1fr 1fr;*/
+  /*}*/
+
+  .main__layout.workout-mode .calendar {
+    max-width: 100%;
+  }
+
+  .copy-message {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+  }
+
+  .calendar {
+    margin-top: 50px;
+  }
+
+  .main__layout-right {
+    flex: 1;
+  }
+
+  .main__layout-left {
+    flex: 1;
+  }
+
+  .main__layout {
+    flex-wrap: nowrap;
+  }
+}
+
+.main__layout-right {
+  max-width: 100%;
+  width: 100%;
+}
+
+.main__layout-left {
+  width: 100%;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

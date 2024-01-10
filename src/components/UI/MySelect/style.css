@@ -1,0 +1,86 @@
+.select-parent {
+	position: relative;
+}
+
+.select-input {
+	border: 2px solid transparent;
+	background: rgba(244,247,248,1);
+	color: rgb(var(--text-color));
+	border-radius: 12px;
+	transition: all .25s ease;
+	padding: 7px 13px 7px 10px;
+	width: 100%;
+	font-size: 13px;
+	height: 42px;
+}
+
+@media(hover: hover) and (pointer: fine) {
+	.select-input:hover {
+		background: rgba(var(--main-bg),1);
+		box-shadow: 0 5px 25px -4px rgba(0,0,0,0.05);
+		transform: translateY(-4px);
+		cursor: pointer;
+	}
+}
+
+.select-input:focus {
+	background: rgba(var(--main-bg),1);
+	box-shadow: 0 5px 25px -4px rgba(0,0,0,0.05);
+	transform: translateY(-4px);
+	cursor: pointer;
+	outline: none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.select-input::placeholder {
+	opacity: 0.7;
+}
+
+.select__icon {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	transform: rotate(-135deg);
+	transition: all .25s ease;
+	z-index: 600;
+	border-left: 1px solid;
+	border-radius: 2px;
+	border-top: 1px solid;
+}
+
+.select-parent:has(.select-input:focus) .select__icon {
+	transform: rotate(45deg);
+}
+
+.options {
+	max-height: 200px;
+	overflow: auto;
+	height: auto;
+	z-index: 100;
+	padding: 5px;
+	transform: scaleY(0.8) translateY(-80px);
+	transition: all .25s ease;
+	scroll-behavior: smooth;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 100%;
+	background-color: var(--main-bg);
+	width: 100%;
+	box-shadow: 0 10px 20px -5px rgba(0,0,0,0.05);
+}
+
+.select-input:focus + .options {
+	opacity: 1;
+	visibility: visible;
+	transform: scaleY(1) translateY(-5px);
+}
+
+.options__item {
+	padding: 6px 10px;
+	cursor: pointer;
+}

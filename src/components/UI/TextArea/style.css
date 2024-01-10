@@ -1,0 +1,29 @@
+.textarea {
+	border-radius: 12px;
+	position: relative;
+}
+
+.textarea__input {
+	border: 2px solid transparent;
+	background: var(--form-bg);
+	color: rgb(var(--text-color));
+	border-radius: inherit;
+	transition: all .25s ease;
+	padding: 7px 13px 7px 10px;
+	width: 100%;
+	appearance: none;
+	-webkit-appearance: none;
+	resize: none;
+
+	&::placeholder {
+		color: rgb(var(--text-color) / 50%);
+		font-size: 12px;
+	}
+}
+
+.textarea__counter {
+	position: absolute;
+	top: -22px;
+	right: 0;
+	font-size: 12px;
+}

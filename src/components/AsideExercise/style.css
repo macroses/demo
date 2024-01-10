@@ -1,0 +1,53 @@
+body:has(.aside) {
+	max-height: 100vh;
+	overflow: hidden;
+}
+
+.aside {
+	position: fixed;
+	top: 8px;
+	right: 8px;
+	bottom: 8px;
+	width: 359px;
+	min-height: calc(100% - 20px);
+	background-color: var(--main-bg);
+	box-shadow: 0 0 25px 0 rgba(0,0,0, 0.05);
+	border-radius: 30px;
+	padding: 32px 16px 16px;
+	z-index: 200;
+}
+
+.aside__content::-webkit-scrollbar {
+	display: none;
+}
+
+.aside__content {
+	height: 100%;
+	overflow: auto;
+}
+
+.aside-layout {
+	position: fixed;
+	z-index: 199;
+	inset: 0;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	will-change: -webkit-backdrop-filter;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 12px;
+}
+
+.exercise-description {
+	margin-bottom: 16px;
+}
+
+.value.empty {
+	opacity: 0.5;
+}
+
+.body-svg {
+	text-align: center;
+}

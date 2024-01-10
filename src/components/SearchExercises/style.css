@@ -1,0 +1,44 @@
+mark {
+	background: rgb(255 140 26 / 30%);
+	border-radius: 3px;
+}
+
+.exercises-search__results-list {
+	max-height: 200px;
+	overflow: auto;
+	background-color: var(--main-bg);
+	box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
+	border-radius: 12px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 11;
+}
+
+.exercises-search__results-item {
+	padding: 8px 16px;
+	user-select: none;
+	cursor: pointer;
+}
+
+@media(hover: hover) and (pointer: fine) {
+	.exercises-search__results-item:hover {
+		background-color: rgba(249,252,253, 1);
+	}
+}
+
+.exercises-search {
+	position: relative;
+}
+
+.exercises-search__empty {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& span {
+		opacity: 0.5;
+	}
+}

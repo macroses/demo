@@ -1,0 +1,52 @@
+.form__auth {
+	max-width: 350px;
+	display: flex;
+	flex-direction: column;
+	margin: 50px auto 0;
+	gap: 24px;
+}
+
+.form__submit {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+
+	& p {
+		margin: 0;
+	}
+}
+
+.form__header {
+	margin-bottom: 0;
+}
+
+.form-redirect {
+	font-weight: 600;
+	color: rgb(var(--accent-color));
+}
+
+.reset-password {
+	text-align: center;
+	font-size: 13px;
+
+	& span {
+		cursor: pointer;
+	}
+}
+
+.social-auth {
+	height: 42px;
+	display: flex;
+	gap: 12px;
+	border-radius: 16px;
+	align-items: center;
+	justify-content: center;
+
+	& button {
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		border: 1px solid rgb(var(--accent-color) / 30%);
+	}
+}

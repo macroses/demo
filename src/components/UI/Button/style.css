@@ -1,0 +1,189 @@
+.button {
+	border: 0;
+	border-radius: 12px;
+	transition: box-shadow var(--base-transition), transform var(--base-transition);
+	position: relative;
+	user-select: none;
+	z-index: 1;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+	background: rgb(var(--accent-color));
+	color: var(--btn-color);
+	padding: 8px 12px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media(hover: hover) and (pointer: fine) {
+	.button:hover {
+		box-shadow: 0 10px 20px -10px rgb(var(--accent-color));
+		transform: translateY(-3px);
+	}
+
+	.button--sm:hover {
+		transform: translateY(0);
+	}
+}
+
+.button--full {
+	width: 100%;
+}
+
+.button--large {
+	font-size: 1rem;
+	border-radius: 15px;
+	padding: 10px 15px;
+}
+
+.button--sm {
+	font-size: .75rem;
+	border-radius: 9px;
+	height: 30px;
+	padding: 5px 10px;
+}
+
+.button--disabled {
+	pointer-events: none;
+	opacity: 0.35;
+}
+
+.button--bordered {
+	background-color: transparent;
+	color: var(--btn-color-transparent);
+
+	&::before {
+		content: '';
+		border: 2px solid rgb(var(--accent-color));
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		background: transparent;
+		pointer-events: none;
+		transition: border-color var(--base-transition);
+		box-sizing: border-box;
+	}
+}
+
+@media(hover: hover) and (pointer: fine) {
+	.button--bordered:hover {
+		box-shadow: none;
+		transform: translateY(0);
+	}
+
+	.button--bordered:hover::before {
+		border: 2px solid rgb(var(--accent-color) / 0.5);
+	}
+}
+
+.button--transparent {
+	background: transparent;
+	color: rgb(var(--accent-color));
+	overflow: hidden;
+	height: 40px;
+	box-shadow: none;
+
+	&::before {
+		content: "";
+		background: transparent;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		pointer-events: none;
+		transition:
+			opacity var(--base-transition),
+			transform var(--base-transition),
+			background-color var(--base-transition);
+		z-index: -1;
+		transform: scale(.5);
+		opacity: 0;
+	}
+
+	&:hover {
+		box-shadow: none;
+		transform: none;
+	}
+
+	&:hover::before {
+		opacity: 1;
+		transform: scale(1);
+		background-color: rgb(var(--accent-color) / 0.2);
+	}
+
+	&.active {
+		background-color: rgb(var(--accent-color) / 0.2);
+	}
+}
+
+.button--loading {
+	pointer-events: none;
+}
+
+.loading {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255 ,0.5);
+	border-radius: inherit;
+
+	&::before {
+		content: "";
+		width: 17px;
+		height: 17px;
+		position: absolute;
+		border: 2px solid hsla(0,0%,100%,0);
+		border-left-color: var(--main-bg);
+		border-radius: 50%;
+		animation: btnload .6s ease infinite;
+	}
+
+	&::after {
+		content: '';
+		width: 17px;
+		height: 17px;
+		border: 2px solid rgba(255, 255, 255, 0);
+		border-left: dotted rgba(255, 255, 255, .6);
+		border-radius: 50%;
+		position: absolute;
+		animation: btnload .6s linear infinite;
+		box-sizing: border-box;
+	}
+}
+
+@keyframes btnload {
+	0% {
+		rotate: 0deg;
+	}
+	100% {
+		rotate: 360deg
+	}
+}
+
+.button_to-workout {
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+}
+
+.hide-calendar__button {
+	position: absolute;
+	right: 0;
+	top: 5px;
+
+	&:hover {
+		box-shadow: none;
+	}
+}

@@ -1,0 +1,52 @@
+.events__list {
+	border: 1px solid rgb(var(--accent-color) / 0.1);
+	border-radius: 12px;
+}
+
+.events__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 8px 8px 20px;
+
+	&:nth-child(even) {
+		background-color: rgba(249,252,253,1);
+	}
+}
+
+.events__button {
+	justify-content: center;
+	gap: 2px;
+
+	& span {
+		width: 3px;
+		height: 3px;
+		border-radius: 50px;
+		background-color: rgb(var(--accent-color));
+	}
+}
+
+.events__functions {
+	position: relative;
+}
+
+.events__empty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 12px;
+	}
+}
+
+.reschedule-form {
+	margin-block: 12px;
+}
+
+.modal__footer .group {
+	justify-content: space-between;
+}
+

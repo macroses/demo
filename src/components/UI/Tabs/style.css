@@ -1,0 +1,42 @@
+.tabs-parent {
+	position: relative;
+	margin-bottom: 16px;
+}
+
+.tabs {
+	display: flex;
+	max-width: 100%;
+	overflow-x: auto;
+
+	&::-webkit-scrollbar {
+		height: 0;
+	}
+}
+
+.tabs__item {
+	padding: 8px 12px;
+	cursor: pointer;
+	transition: color var(--base-transition);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+@media(hover: hover) and (pointer: fine) {
+	.tabs__item:hover {
+		color: rgb(var(--accent-color));
+	}
+}
+
+.tabs__item.active {
+	cursor: default;
+	color: rgb(var(--accent-color));
+}
+
+.tabs-line {
+	transition: all var(--base-transition);
+	will-change: left, right;
+	position: absolute;
+	height: 2px;
+	background-color: rgb(var(--accent-color));
+}

@@ -1,0 +1,22 @@
+.creating-modal__wr {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding-top: 12px;
+}
+
+.creating-modal__muscles {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+
+	& .multiselect {
+		flex: 1;
+	}
+}
+
+.creating-modal__item-title {
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 4px;
+}

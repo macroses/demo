@@ -1,0 +1,59 @@
+.button-group {
+	display: flex;
+	border: 1px solid rgb(var(--accent-color) / 20%);
+	border-radius: 12px;
+	overflow: hidden;
+	height: 42px;
+	position: relative;
+	width: 100%;
+
+	@media (min-width: 768px) {
+		width: 100%;
+	}
+}
+
+.button-group__item {
+	background-color: transparent;
+	border: 0;
+	position: relative;
+	width: auto;
+	flex: 1;
+	font-size: 12px;
+	font-weight: 500;
+	white-space: nowrap;
+	user-select: none;
+	will-change: color;
+
+	&:not(:last-of-type)::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: calc(50% - 10px);
+		width: 1px;
+		height: 20px;
+		background: rgb(var(--accent-color) / 20%);
+	}
+	
+	&:not(.active) {
+		cursor: pointer;
+	}
+
+	&.active {
+		color: #fff;
+		transition: color 0.25s ease;
+	}
+
+	@media (min-width: 768px) {
+		width: 80px;
+	}
+}
+
+.shadow-btn {
+	position: absolute;
+	top: 2px;
+	border-radius: 9px;
+	background-color: rgb(var(--accent-color));
+	transition: all 0.25s ease;
+	height: calc(100% - 4px);
+	z-index: -1;
+}

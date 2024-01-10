@@ -1,0 +1,122 @@
+.input-parent {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+}
+
+.input-parent:has(.input-label--fade) {
+	overflow: hidden;
+}
+
+.input-content {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	border-radius: 12px;
+}
+
+.input-component {
+	border: 2px solid transparent;
+	background: var(--form-bg);
+	color: rgb(var(--text-color));
+	border-radius: inherit;
+	transition: all .25s ease;
+	padding: 7px 13px 7px 10px;
+	width: 100%;
+	appearance: none;
+	-webkit-appearance: none;
+
+	&.small {
+		padding: 1px 4px;
+		height: 28px;
+		border-radius: 6px;
+		border: 1px solid transparent;
+		font-size: 12px;
+
+		&:focus {
+			padding-left: 4px;
+			outline: 1px solid rgb(var(--accent-color) / 50%);
+		}
+
+		& + .input-clear {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.input-label {
+	position: absolute;
+	left: 13px;
+	font-size: .8rem;
+	transition: all .25s ease;
+	cursor: text;
+	user-select: none;
+	pointer-events: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	opacity: .4;
+}
+
+.input-component:focus {
+	padding-left: 15px;
+}
+
+.input-component:focus ~ .input-label {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transform: translate(-13px,-77%);
+	font-size: .75rem;
+}
+
+.input-label--hidden {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transform: translate(-13px,-77%);
+	font-size: .75rem;
+}
+
+.input-label.input-label--fade {
+	opacity: 0.5;
+	visibility: visible;
+	pointer-events: auto;
+	transform: translate(-3px, 0);
+	font-size: .75rem;
+}
+
+.input-label.input-has-value {
+	opacity: 0;
+}
+
+.input-component:focus ~ .input-label.input-label--fade {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: auto;
+	transform: translate(50px, 0);
+}
+
+.input-clear {
+	background: transparent;
+	display: flex;
+	align-items: center;
+	height: 38px;
+	width: 38px;
+	justify-content: center;
+	position: absolute;
+	top: 2px;
+	right: 3px;
+	border: 0;
+	cursor: pointer;
+	border-radius: 9px;
+	transition: all var(--base-transition);
+}
+
+.input-clear:hover {
+	background-color: rgba(249,252,253, 1);
+}

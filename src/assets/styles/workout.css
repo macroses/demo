@@ -1,0 +1,67 @@
+.workout__date {
+	margin-bottom: 24px;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	color: rgb(var(--text-color));
+}
+
+.workout__name {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.workout__color {
+	display: flex;
+	align-items: center;
+}
+
+.tabs-main {
+	display: flex;
+	align-items: baseline;
+	gap: 12px;
+}
+
+.events {
+	padding-block: 6px;
+	text-align: center;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.user-workout {
+	padding: 12px;
+	border-radius: 20px;
+	border: 1px solid rgb(var(--accent-color) / 0.1);
+	margin-bottom: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+
+	@media (max-width: 500px) {
+		& {
+			padding: 8px;
+			gap: 8px;
+		}
+	}
+}
+
+.total-tonnage {
+	font-size: 12px;
+	background-color: rgba(244,247,248,1);
+	padding: 0 12px;
+	display: flex;
+	align-items: center;
+	border-radius: 9px;
+	overflow: hidden;
+	height: 35px;
+	flex-grow: 1;
+}
+
+.user-workout__funcs {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 12px;
+}

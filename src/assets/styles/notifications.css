@@ -1,0 +1,38 @@
+body .Toastify__toast {
+	box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5);
+	border-radius: 9px;
+	font-family: 'Poppins', sans-serif;
+	--toastify-toast-width: 250px;
+}
+
+body .Toastify__toast-container {
+	--toastify-toast-width: 250px;
+
+	@media (max-width: 480px) {
+		width: 250px;
+		left: initial;
+		top: 12px;
+	}
+}
+
+body .Toastify__toast--error {
+	background: rgba(255,71,87, 1);
+	color: #fff;
+	--toastify-icon-color-error: #fff;
+}
+
+body .Toastify__toast--success {
+	background: rgb(122 202 115);
+	color: #fff;
+	--toastify-icon-color-success: #fff;
+}
+
+body .Toastify__toast--info {
+	background: #7094fc;
+	color: #fff;
+	--toastify-icon-color-info: #fff;
+}
+
+body .Toastify__progress-bar--info {
+	background: rgb(var(--accent-color));
+}
